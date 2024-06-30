@@ -1,0 +1,19 @@
+version: '3'
+services:
+  docker2mqtt:
+    container_name: docker2mqtt
+    environment:
+    - DESTROYED_CONTAINER_TTL=${DESTROYED_CONTAINER_TTL}
+    - DOCKER2MQTT_HOSTNAME=${DOCKER2MQTT_HOSTNAME}
+    - HOMEASSISTANT_PREFIX=${HOMEASSISTANT_PREFIX}
+    - MQTT_CLIENT_ID=${MQTT_CLIENT_ID}
+    - MQTT_HOST=${MQTT_HOST}
+    - MQTT_PORT=${MQTT_PORT}
+    - MQTT_USER=${MQTT_USER}
+    - MQTT_PASSWD=${MQTT_PASSWD}
+    - MQTT_TIMEOUT=${MQTT_TIMEOUT}
+    - MQTT_TOPIC_PREFIX=${MQTT_TOPIC_PREFIX}
+    - MQTT_QOS=${MQTT_QOS}
+    restart: always
+    volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
