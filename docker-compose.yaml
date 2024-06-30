@@ -1,7 +1,7 @@
-version: '3'
 services:
   docker2mqtt:
     container_name: docker2mqtt
+    build: https://github.com/jilund/docker2mqtt.git
     environment:
     - DESTROYED_CONTAINER_TTL=${DESTROYED_CONTAINER_TTL}
     - DOCKER2MQTT_HOSTNAME=${DOCKER2MQTT_HOSTNAME}
